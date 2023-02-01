@@ -1,18 +1,9 @@
-import React, { useContext } from "react";
-import { UserContext } from "../context/UserContext";
+import React from "react";
 
 const Home = () => {
-  const { setCurrentUser } = useContext(UserContext);
-
-  const handleLogout = () => {
-    setCurrentUser(null);
-    localStorage.removeItem("currentUser");
-  };
-
   return (
     <div>
       <h1>Home</h1>
-      <button onClick={handleLogout}>Logout</button>
     </div>
   );
 };

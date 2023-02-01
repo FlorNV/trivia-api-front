@@ -1,4 +1,4 @@
-body, input, input::placeholder {
+body, button, input, input::placeholder {
     font-family: $font-family-base;
 }
 
@@ -13,4 +13,8 @@ input, input::placeholder {
 
 label, button, input[type="submit"] {
     font-size: 1.2rem;
+}
+
+a {
+    text-decoration: none;
 }
