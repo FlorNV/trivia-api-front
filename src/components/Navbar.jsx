@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
+import { FiSettings, FiLogOut } from "react-icons/fi";
 import { UserContext } from "../context/UserContext";
 
 const Navbar = () => {
@@ -18,10 +19,15 @@ const Navbar = () => {
             Logo
           </Link>
         </div>
-        <div>
-          <button className="nav-btn" onClick={handleLogout}>
+        <div className="nav-links">
+          <Link className="nav-link" to="/">
+            <FiSettings className="icon" />
+            Settings
+          </Link>
+          <span className="nav-link" onClick={handleLogout}>
+            <FiLogOut className="icon" />
             Logout
-          </button>
+          </span>
         </div>
       </div>
     </nav>

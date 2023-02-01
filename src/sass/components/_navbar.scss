@@ -13,14 +13,20 @@
             color: $purple;
         }
         
-        .nav-btn {
-            background: none;
-            border: none;
+        .nav-link {
+            margin-left: 4rem;
+            font-size: 1.1rem;
             color: $purple;
             cursor: pointer;
 
             &:hover {
                 color: rgba($purple, 0.6);
+            }
+
+            .icon {
+                font-size: 1.4rem;
+                vertical-align: middle;
+                margin-right: 6px;
             }
         }
     }
