@@ -1,0 +1,16 @@
+body, input, input::placeholder {
+    font-family: $font-family-base;
+}
+
+h1 {
+    font-family: $font-family-alt;
+    font-size: 2rem;
+}
+
+input, input::placeholder {
+    font-size: 1rem;
+}
+
+label, button, input[type="submit"] {
+    font-size: 1.2rem;
+}
