@@ -20,7 +20,7 @@ const Navbar = () => {
           </Link>
         </div>
         <div className="nav-links">
-          <Link className="nav-link" to="/">
+          <Link className="nav-link" to="/settings">
             <FiSettings className="icon" />
             Settings
           </Link>

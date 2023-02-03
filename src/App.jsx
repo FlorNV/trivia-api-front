@@ -1,20 +1,28 @@
 import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { SettingsContext } from "./context/SettingsContext";
 import { UserContext } from "./context/UserContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Settings from "./pages/Settings";
 import PrivateRouter from "./routers/PrivateRouter";
 import PublicRouter from "./routers/PublicRouter";
 
 const App = () => {
   const { setCurrentUser } = useContext(UserContext);
+  const { setSettings } = useContext(SettingsContext);
 
   useEffect(() => {
     const userStored = localStorage.getItem("currentUser");
+    const settingsStored = localStorage.getItem("settings");
     if (userStored) {
       setCurrentUser(JSON.parse(userStored));
     }
-  }, [setCurrentUser]);
+
+    if (settingsStored) {
+      setSettings(JSON.parse(settingsStored));
+    }
+  }, [setCurrentUser, setSettings]);
 
   return (
     <BrowserRouter>
@@ -25,6 +33,7 @@ const App = () => {
 
         <Route path="/" element={<PrivateRouter />}>
           <Route index element={<Home />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
 
         <Route path="*" element={<h1>Not Found</h1>} />

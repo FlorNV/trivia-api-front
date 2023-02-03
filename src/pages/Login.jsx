@@ -19,44 +19,40 @@ const Login = () => {
   };
 
   return (
-    <div className="container login-form-container">
+    <div className="login-form-container">
       <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-        <h1 className="login-form__title">Welcome</h1>
-        <div className="login-form__row">
-          <label className="login-form__label" htmlFor="username">
+        <h1 className="title">Welcome</h1>
+        <div className="form-row">
+          <label className="form-label" htmlFor="username">
             Username
           </label>
           <input
             type="text"
             id="username"
             placeholder="Username"
-            className={`login-form__input ${
-              errors.username && "login-form__input--warning"
-            }`}
+            className={`form-input ${errors.username && "input-warning"}`}
             {...register("username", {
               required: "Enter your username",
             })}
           />
-          <p className="login-form__warning">{errors.username?.message}</p>
+          <p className="label-warning">{errors.username?.message}</p>
         </div>
-        <div className="login-form__row">
-          <label className="login-form__label" htmlFor="password">
+        <div className="form-row">
+          <label className="form-label" htmlFor="password">
             Password
           </label>
           <input
             type="password"
             id="password"
             placeholder="Password"
-            className={`login-form__input ${
-              errors.password && "login-form__input--warning"
-            }`}
+            className={`form-input ${errors.password && "input-warning"}`}
             {...register("password", {
               required: "Enter your password",
             })}
           />
-          <p className="login-form__warning">{errors.password?.message}</p>
+          <p className="label-warning">{errors.password?.message}</p>
         </div>
-        <input type="submit" value="Login" className="login-form__btn" />
+        <input type="submit" value="Login" className="form-btn" />
       </form>
     </div>
   );
