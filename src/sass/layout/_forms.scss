@@ -148,17 +148,24 @@
 .form-btn {
     padding: 0.6rem 2rem;
     border-radius: 6px;
-    border: 1px solid #bbb;
+    border: 2px solid $purple;
     background-color: transparent;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 4px;
-    color: #bbb;
+    color: $purple;
     cursor: pointer;
 
     &:hover {
         background-color: $purple;
         border-color: $black;
         color: $black;
+    }
+
+    &.disabled {
+        background-color: transparent;
+        border-color: #bbb;
+        color: #bbb;
+        cursor: auto;
     }
 }

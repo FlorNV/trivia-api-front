@@ -1,0 +1,15 @@
+.game-container {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .flex {
+        width: 800px;
+        max-width: 80%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
