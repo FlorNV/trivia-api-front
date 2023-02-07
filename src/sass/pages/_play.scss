@@ -1,0 +1,33 @@
+.answer {
+    display: block;
+    width: 28rem;
+    padding: 1rem;
+    border: 2px solid #aaa;
+    border-radius: 1rem;
+    margin: 1rem auto;
+    background-color: transparent;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+        border-color: $blue;
+    }
+
+    &.correct-answer {
+        border-color: $green;
+        color: $green;
+        cursor: auto;
+    }
+
+    &.incorrect-answer {
+        border-color: $warning;
+        color: $warning;
+        cursor: auto;
+    }
+
+    &.disabled {
+        border-color: #bbb;
+        color: #bbb;
+        cursor: auto;
+    }
+}

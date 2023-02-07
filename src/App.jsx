@@ -4,6 +4,7 @@ import { SettingsContext } from "./context/SettingsContext";
 import { UserContext } from "./context/UserContext";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
+import Play from "./pages/Play";
 import Settings from "./pages/Settings";
 import PrivateRouter from "./routers/PrivateRouter";
 import PublicRouter from "./routers/PublicRouter";
@@ -34,6 +35,7 @@ const App = () => {
         <Route path="/" element={<PrivateRouter />}>
           <Route index element={<Home />} />
           <Route path="settings" element={<Settings />} />
+          <Route path="play" element={<Play />} />
         </Route>
 
         <Route path="*" element={<h1>Not Found</h1>} />
