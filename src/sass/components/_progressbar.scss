@@ -1,0 +1,31 @@
+.timer {
+    font-size: 1.2rem;
+
+    .flex {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .icon {
+        font-size: 2rem;
+        margin-right: 6px;
+    }
+}
+
+.bar {
+    height: 1rem;
+    width: 28rem;
+    border-radius: 1rem;
+    margin: 1rem auto 2rem;
+    background-color: rgba($black, 0.25);;
+    color: $white;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    border-radius: inherit;
+    background-color: $pink;
+    box-shadow: 0 0 10px $pink, 0 0 20px $pink;
+}

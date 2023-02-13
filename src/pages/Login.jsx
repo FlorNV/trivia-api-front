@@ -29,7 +29,6 @@ const Login = () => {
           <input
             type="text"
             id="username"
-            placeholder="Username"
             className={`form-input ${errors.username && "input-warning"}`}
             {...register("username", {
               required: "Enter your username",
@@ -44,7 +43,6 @@ const Login = () => {
           <input
             type="password"
             id="password"
-            placeholder="Password"
             className={`form-input ${errors.password && "input-warning"}`}
             {...register("password", {
               required: "Enter your password",

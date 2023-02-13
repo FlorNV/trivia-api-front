@@ -1,0 +1,32 @@
+@mixin difficulty($color: $green) {
+    border-color: $color;
+    box-shadow: 0 0 4px $color, inset 0 0 4px $color;
+}
+
+@mixin difficulty-background($color: $green) {
+    content: "";
+    width: 10px;
+    height:10px;
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: $color;
+    transition: transform 0.5s ease;
+}
+
+@mixin button-background($color: $cyan) {
+    background-color: $color;
+    box-shadow: 0 0 10px $color;
+    transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+
+    &:hover {
+        box-shadow: 0 0 10px $color, 0 0 20px $color;
+    }
+}
+
+@mixin answer-color($color: $green) {
+    border-color: $color;
+    color: $color;
+    box-shadow: 0 0 10px $color, inset 0 0 10px $color;
+    text-shadow: 0 0 10px $color;
+    cursor: auto;
+}

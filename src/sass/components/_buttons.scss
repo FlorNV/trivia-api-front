@@ -1,0 +1,73 @@
+a.link {
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    background-color: $pink;
+    box-shadow: 0 0 10px $pink, 0 0 20px $pink;
+    color: $white;
+    transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+
+    &:hover {
+        box-shadow: 0 0 10px $pink, 0 0 20px $pink, 0 0 40px $pink;
+    }
+}
+
+.menu-container .menu-link {
+    width: 200px;
+    padding: 1rem;
+    text-align: center;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: $white;
+    cursor: pointer;
+    @include button-background;
+
+    &.green {
+        font-size: 2rem;
+        text-transform: uppercase;
+        @include button-background($green);
+
+        .icon {
+            font-size: 2.8rem;
+        }
+    }
+
+    &.pink {
+        @include button-background($pink);
+    }
+
+    .icon {
+        font-size: 1.4rem;
+        vertical-align: bottom;
+        margin-right: 10px;
+    }
+}
+
+.form-btn {
+    margin-top: 2rem;
+    padding: 0.6rem 2rem;
+    border-radius: 6px;
+    border: none;
+    background-color: $cyan;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: $white;
+    box-shadow: 0 0 10px $cyan, 0 0 20px $cyan;
+    cursor: pointer;
+    transition: box-shadow 1s cubic-bezier(0.4, 0, 0.6, 1);
+
+    &:hover {
+        box-shadow: 0 0 10px $cyan, 0 0 20px $cyan, 0 0 40px $cyan;
+    }
+
+    &.disabled {
+        background-color: transparent;
+        box-shadow: none;
+        border: 2px solid rgba($white, 0.8);
+        color: rgba($white, 0.8);
+        cursor: auto;
+    }
+}

@@ -31,10 +31,12 @@ const Play = () => {
     <div className="container content-center">
       {!isEndGame ? (
         <>
-          <h3>
-            Question {current + 1}/{questions.length}
-          </h3>
-          <h4>Score: {score}</h4>
+          <div className="state">
+            <div>
+              Question {current + 1}/{questions.length}
+            </div>
+            <div>Score: {score}</div>
+          </div>
           <QuestionItem
             key={current}
             question={question}
@@ -45,13 +47,17 @@ const Play = () => {
         </>
       ) : (
         <>
-          <h1>End Game</h1>
-          <p>Score: {score}</p>
-          <p>
-            {score}/{questions.length}
-          </p>
-          {score === questions.length && <h2>Perfect!</h2>}
-          <Link to="/">Go to menu</Link>
+          <h1 className="title">End Game</h1>
+          <div className="result">
+            <p>Score: {score}</p>
+            <p>
+              {score}/{questions.length}
+            </p>
+          </div>
+          {score === questions.length && <h2 className="title-2">Perfect!</h2>}
+          <Link className="link" to="/">
+            Go to menu
+          </Link>
         </>
       )}
     </div>

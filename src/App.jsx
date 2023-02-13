@@ -2,8 +2,10 @@ import React, { useContext, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { SettingsContext } from "./context/SettingsContext";
 import { UserContext } from "./context/UserContext";
-import Home from "./pages/Home";
+import Categories from "./pages/Categories";
+import Home from "./pages/Categories";
 import Login from "./pages/Login";
+import Menu from "./pages/Menu";
 import Play from "./pages/Play";
 import Settings from "./pages/Settings";
 import PrivateRouter from "./routers/PrivateRouter";
@@ -33,7 +35,8 @@ const App = () => {
         </Route>
 
         <Route path="/" element={<PrivateRouter />}>
-          <Route index element={<Home />} />
+          <Route index element={<Menu />} />
+          <Route path="categories" element={<Categories />} />
           <Route path="settings" element={<Settings />} />
           <Route path="play" element={<Play />} />
         </Route>

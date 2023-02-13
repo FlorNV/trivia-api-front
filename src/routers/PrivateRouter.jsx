@@ -8,7 +8,7 @@ const PrivateRouter = () => {
 
   return currentUser ? (
     <>
-      <Navbar />
+      {/* <Navbar /> */}
       <Outlet />
     </>
   ) : (

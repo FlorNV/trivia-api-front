@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import Category from "../components/Category";
+import CategorySkeleton from "../components/CategorySkeleton";
 import { QuestionsContext } from "../context/QuestionsContext";
 import { SettingsContext } from "../context/SettingsContext";
 import { getCategories, getQuestions } from "../server";
 
-const Home = () => {
+const Categories = () => {
   const navigate = useNavigate();
   const { settings } = useContext(SettingsContext);
   const { setQuestions } = useContext(QuestionsContext);
+  const [isLoading, setIsLoading] = useState(true);
   const [categories, setCategories] = useState([]);
   const [selected, setSelected] = useState("");
 
@@ -29,6 +31,9 @@ const Home = () => {
           list.push({ key, values: data[key] });
         }
         setCategories(list);
+        setTimeout(() => {
+          setIsLoading(false);
+        }, 2000);
       })
       .catch((error) => console.log(error));
   }, []);
@@ -37,14 +42,18 @@ const Home = () => {
     <div className="menu-container">
       <h3>Select a category</h3>
       <div className="flex">
-        {categories.map((category, index) => (
-          <Category
-            key={index}
-            category={category}
-            selected={selected}
-            setSelected={setSelected}
-          />
-        ))}
+        {isLoading
+          ? [...Array(10)].map((category, index) => (
+              <CategorySkeleton key={index} />
+            ))
+          : categories.map((category, index) => (
+              <Category
+                key={index}
+                category={category}
+                selected={selected}
+                setSelected={setSelected}
+              />
+            ))}
       </div>
       <div>
         <button
@@ -52,11 +61,11 @@ const Home = () => {
           className={`form-btn ${!selected ? "disabled" : ""}`}
           disabled={selected === ""}
         >
-          Play
+          Start
         </button>
       </div>
     </div>
   );
 };
 
-export default Home;
+export default Categories;

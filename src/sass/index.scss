@@ -1,9 +1,12 @@
 @import './utilities/variables';
 @import './utilities/global';
+@import './utilities/mixins';
 @import './base/reset';
 @import './base/typography';
+@import './components/buttons';
 @import './components/navbar';
 @import './components/category';
+@import './components/progressbar';
 @import './layout/forms';
-@import './pages/home';
+@import './pages/menu';
 @import './pages/play';

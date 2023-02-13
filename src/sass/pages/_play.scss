@@ -1,8 +1,20 @@
+.state {
+    width: 28rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.question {
+    width: 28rem;
+    font-size: 1.2rem;
+    margin: 2rem 0;
+}
+
 .answer {
     display: block;
     width: 28rem;
     padding: 1rem;
-    border: 2px solid #aaa;
+    border: 2px solid rgba($white, 0.8);
     border-radius: 1rem;
     margin: 1rem auto;
     background-color: transparent;
@@ -10,24 +22,26 @@
     cursor: pointer;
 
     &:hover {
-        border-color: $blue;
+        border-color: $cyan;
     }
 
     &.correct-answer {
-        border-color: $green;
-        color: $green;
-        cursor: auto;
+        @include answer-color;
     }
 
     &.incorrect-answer {
-        border-color: $warning;
-        color: $warning;
-        cursor: auto;
+        @include answer-color($pink);
     }
 
     &.disabled {
-        border-color: #bbb;
-        color: #bbb;
+        border-color: rgba($white, 0.8);
+        color: rgba($white, 0.8);
         cursor: auto;
     }
+}
+
+.result {
+    margin: 2rem 0;
+    font-size: 1.6rem;
+    text-align: center;
 }

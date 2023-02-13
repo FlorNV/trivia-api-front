@@ -1,4 +1,5 @@
 import React, { useEffect, useContext, useState } from "react";
+import { Link } from "react-router-dom";
 import { SettingsContext } from "../context/SettingsContext";
 
 const Settings = () => {
@@ -34,7 +35,12 @@ const Settings = () => {
 
   return (
     <form className="settings-form">
-      <h2 className="form-title">Settings</h2>
+      <div className="flex">
+        <h2 className="form-title">Settings</h2>
+        <Link className="link" to="/">
+          Go Back
+        </Link>
+      </div>
       <div className="form-row">
         <h3 className="form-row__title">Question limit</h3>
         <input
@@ -49,51 +55,53 @@ const Settings = () => {
       </div>
       <div className="form-row">
         <h3 className="form-row__title">Difficulty</h3>
-        <label
-          className={`form-label-radio ${
-            difficulty === "easy" ? "selected" : ""
-          }`}
-        >
-          <input
-            type="radio"
-            name="difficulty"
-            value="easy"
-            checked={difficulty === "easy"}
-            onChange={handleChange}
-            className="form-radio"
-          />
-          Easy
-        </label>
-        <label
-          className={`form-label-radio ${
-            difficulty === "medium" ? "selected" : ""
-          }`}
-        >
-          <input
-            type="radio"
-            name="difficulty"
-            value="medium"
-            checked={difficulty === "medium"}
-            onChange={handleChange}
-            className="form-radio"
-          />
-          Medium
-        </label>
-        <label
-          className={`form-label-radio ${
-            difficulty === "hard" ? "selected" : ""
-          }`}
-        >
-          <input
-            type="radio"
-            name="difficulty"
-            value="hard"
-            checked={difficulty === "hard"}
-            onChange={handleChange}
-            className="form-radio"
-          />
-          Hard
-        </label>
+        <div className="form-row__labels">
+          <label
+            className={`form-label-radio ${
+              difficulty === "easy" && difficulty
+            }`}
+          >
+            <input
+              type="radio"
+              name="difficulty"
+              value="easy"
+              checked={difficulty === "easy"}
+              onChange={handleChange}
+              className="form-radio easy"
+            />
+            Easy
+          </label>
+          <label
+            className={`form-label-radio ${
+              difficulty === "medium" && difficulty
+            }`}
+          >
+            <input
+              type="radio"
+              name="difficulty"
+              value="medium"
+              checked={difficulty === "medium"}
+              onChange={handleChange}
+              className="form-radio medium"
+            />
+            Medium
+          </label>
+          <label
+            className={`form-label-radio ${
+              difficulty === "hard" && difficulty
+            }`}
+          >
+            <input
+              type="radio"
+              name="difficulty"
+              value="hard"
+              checked={difficulty === "hard"}
+              onChange={handleChange}
+              className="form-radio hard"
+            />
+            Hard
+          </label>
+        </div>
       </div>
       <button className="form-btn" onClick={handleConfirm}>
         Confirm
