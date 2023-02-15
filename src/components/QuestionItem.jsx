@@ -7,13 +7,12 @@ const QuestionItem = ({
   incorrectAnswers,
   onAnswerSelected,
 }) => {
-  //   const [isLoading, setIsLoading] = useState(true);
+  const [answers, setAnswers] = useState([]);
   const [timer, setTimer] = useState(10);
   const [width, setWidth] = useState(0);
   const [isRunning, setIsRunning] = useState(true);
   const [selected, setSelected] = useState("");
   const isSelectedAnswer = selected !== "";
-  const answers = [...incorrectAnswers, correctAnswer];
 
   const handleClick = (e) => {
     setSelected(e.target.innerHTML);
@@ -21,7 +20,19 @@ const QuestionItem = ({
     onAnswerSelected(isCorrectAnswer);
   };
 
+  const disorder = () => {
+    const array = [...incorrectAnswers, correctAnswer];
+    for (let i = 0; i < array.length; i++) {
+      const index = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[index];
+      array[index] = temp;
+    }
+    return array;
+  };
+
   useEffect(() => {
+    setAnswers(disorder());
     let progressInterval = undefined;
 
     const questionInterval = setInterval(() => {

@@ -47,14 +47,17 @@ const Play = () => {
         </>
       ) : (
         <>
-          <h1 className="title">End Game</h1>
+          {score === questions.length ? (
+            <h1 className="title green">Completed</h1>
+          ) : (
+            <h1 className="title">Game Over</h1>
+          )}
           <div className="result">
             <p>Score: {score}</p>
             <p>
               {score}/{questions.length}
             </p>
           </div>
-          {score === questions.length && <h2 className="title-2">Perfect!</h2>}
           <Link className="link" to="/">
             Go to menu
           </Link>

@@ -6,7 +6,10 @@ export const SettingsContext = createContext({
 });
 
 export const SettingsProvider = ({ children }) => {
-  const [settings, setSettings] = useState(null);
+  const [settings, setSettings] = useState({
+    limit: 5,
+    difficulty: "easy",
+  });
   const value = { settings, setSettings };
 
   return (

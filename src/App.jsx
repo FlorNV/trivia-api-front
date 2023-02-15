@@ -1,9 +1,8 @@
 import React, { useContext, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import { SettingsContext } from "./context/SettingsContext";
 import { UserContext } from "./context/UserContext";
 import Categories from "./pages/Categories";
-import Home from "./pages/Categories";
 import Login from "./pages/Login";
 import Menu from "./pages/Menu";
 import Play from "./pages/Play";
@@ -13,11 +12,14 @@ import PublicRouter from "./routers/PublicRouter";
 
 const App = () => {
   const { setCurrentUser } = useContext(UserContext);
-  const { setSettings } = useContext(SettingsContext);
+  const { settings, setSettings } = useContext(SettingsContext);
 
   useEffect(() => {
     const userStored = localStorage.getItem("currentUser");
     const settingsStored = localStorage.getItem("settings");
+
+    console.log(settings);
+    console.log(settingsStored);
     if (userStored) {
       setCurrentUser(JSON.parse(userStored));
     }
@@ -28,7 +30,7 @@ const App = () => {
   }, [setCurrentUser, setSettings]);
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route element={<PublicRouter />}>
           <Route path="/login" element={<Login />} />
@@ -43,7 +45,7 @@ const App = () => {
 
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 

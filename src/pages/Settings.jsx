@@ -1,9 +1,11 @@
 import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { SettingsContext } from "../context/SettingsContext";
+import { FiAlertCircle } from "react-icons/fi";
 
 const Settings = () => {
   const { settings, setSettings } = useContext(SettingsContext);
+  const [wasChanged, setwasChanged] = useState(false);
   const [data, setData] = useState({
     limit: 5,
     difficulty: "easy",
@@ -19,10 +21,13 @@ const Settings = () => {
       ...data,
       [name]: value,
     });
+
+    setwasChanged(true);
   };
 
   const handleConfirm = (e) => {
     e.preventDefault();
+    setwasChanged(false);
     setSettings(data);
     localStorage.setItem("settings", JSON.stringify(data));
   };
@@ -106,6 +111,12 @@ const Settings = () => {
       <button className="form-btn" onClick={handleConfirm}>
         Confirm
       </button>
+      {wasChanged && (
+        <span className="alert">
+          <FiAlertCircle className="icon" />
+          Save changes
+        </span>
+      )}
     </form>
   );
 };

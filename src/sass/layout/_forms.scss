@@ -180,30 +180,3 @@
     box-shadow: 0 0 4px $purple;
     color: $white;
 }
-
-// .form-btn {
-//     padding: 0.6rem 2rem;
-//     border-radius: 6px;
-//     border: none;
-//     background-color: $cyan;
-//     font-size: 1.2rem;
-//     font-weight: bold;
-//     text-transform: uppercase;
-//     letter-spacing: 4px;
-//     color: $white;
-//     box-shadow: 0 0 10px $cyan, 0 0 20px $cyan;
-//     cursor: pointer;
-//     transition: box-shadow 1s cubic-bezier(0.4, 0, 0.6, 1);
-
-//     &:hover {
-//         box-shadow: 0 0 10px $cyan, 0 0 20px $cyan, 0 0 40px $cyan;
-//     }
-
-//     &.disabled {
-//         background-color: transparent;
-//         box-shadow: none;
-//         border: 2px solid rgba($white, 0.8);
-//         color: rgba($white, 0.8);
-//         cursor: auto;
-//     }
-// }
