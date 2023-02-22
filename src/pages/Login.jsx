@@ -50,7 +50,11 @@ const Login = () => {
           />
           <p className="label-warning">{errors.password?.message}</p>
         </div>
-        <input type="submit" value="Login" className="form-btn" />
+        <input
+          className="btn btn-block btn-cyan form-btn mt-4"
+          type="submit"
+          value="Login"
+        />
       </form>
     </div>
   );

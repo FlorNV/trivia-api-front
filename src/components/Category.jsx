@@ -14,7 +14,11 @@ const Category = ({ category, selected, setSelected }) => {
   };
 
   return (
-    <label className={`category ${selected === value ? "selected" : ""}`}>
+    <label
+      className={`btn btn-outline category ${
+        selected === value ? "selected" : ""
+      }`}
+    >
       <input
         type="radio"
         name="category"

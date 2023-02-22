@@ -10,35 +10,35 @@
     margin: 2rem 0;
 }
 
-.answer {
-    display: block;
-    width: 28rem;
-    padding: 1rem;
-    border: 2px solid rgba($white, 0.8);
-    border-radius: 1rem;
-    margin: 1rem auto;
-    background-color: transparent;
-    font-size: 1rem;
-    cursor: pointer;
+// .answer {
+//     display: block;
+//     width: 28rem;
+//     padding: 1rem;
+//     border: 2px solid rgba($white, 0.8);
+//     border-radius: 1rem;
+//     margin: 1rem auto;
+//     background-color: transparent;
+//     font-size: 1rem;
+//     cursor: pointer;
 
-    &:hover {
-        border-color: $cyan;
-    }
+//     &:hover {
+//         border-color: $cyan;
+//     }
 
-    &.correct-answer {
-        @include answer-color;
-    }
+//     &.correct-answer {
+//         @include answer-color;
+//     }
 
-    &.incorrect-answer {
-        @include answer-color($pink);
-    }
+//     &.incorrect-answer {
+//         @include answer-color($pink);
+//     }
 
-    &.disabled {
-        border-color: rgba($white, 0.8);
-        color: rgba($white, 0.8);
-        cursor: auto;
-    }
-}
+//     &.disabled {
+//         border-color: rgba($white, 0.8);
+//         color: rgba($white, 0.8);
+//         cursor: auto;
+//     }
+// }
 
 .result {
     margin: 2rem 0;

@@ -14,15 +14,21 @@ const Menu = () => {
   return (
     <div className="menu-container flex">
       <h1 className="title">Trivia API</h1>
-      <Link className="menu-link green" to="/categories">
+      <Link
+        className="menu-link btn-green btn-play icon-container"
+        to="/categories"
+      >
         <FiPlay className="icon" />
         Play
       </Link>
-      <Link className="menu-link" to="/settings">
+      <Link className="menu-link btn-cyan icon-container" to="/settings">
         <FiSettings className="icon" />
         Settings
       </Link>
-      <span className="menu-link pink" onClick={handleLogout}>
+      <span
+        className="menu-link btn-pink icon-container"
+        onClick={handleLogout}
+      >
         <FiLogOut className="icon" />
         Logout
       </span>

@@ -1,9 +1,4 @@
-@mixin difficulty($color: $green) {
-    border-color: $color;
-    box-shadow: 0 0 4px $color, inset 0 0 4px $color;
-}
-
-@mixin difficulty-background($color: $green) {
+@mixin radio-background($color: $green) {
     content: "";
     width: 10px;
     height:10px;
@@ -13,25 +8,27 @@
     transition: transform 0.5s ease;
 }
 
-@mixin button-background($color: $cyan) {
-    background-color: $color;
-    box-shadow: 0 0 10px $color;
-    transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.6, 1);
+@mixin button-theme($name, $color, $size) {
+    .btn-#{$name} {
+        background-color: $color;
+        box-shadow: 0 0 $size $color;
+        transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.6, 1);
 
-    &:hover {
-        box-shadow: 0 0 10px $color, 0 0 20px $color;
+        &:hover {
+            box-shadow: 0 0 $size $color, 0 0 calc($size * 2) $color;
+        }
     }
 }
 
-@mixin answer-color($color: $green) {
-    border-color: $color;
+@mixin border-shadow($color, $size) {
     color: $color;
-    box-shadow: 0 0 10px $color, inset 0 0 10px $color;
-    text-shadow: 0 0 10px $color;
-    cursor: auto;
+    border-color: $color;
+    box-shadow: 0 0 $size $color, inset 0 0 $size $color;
+    text-shadow: 0 0 $size $color;
 }
 
-@mixin animate-text($name, $color) {
+@mixin animate-text($color) {
+    $name: text-pulse-#{unique-id()};
     animation: $name 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 
     @keyframes #{$name} {

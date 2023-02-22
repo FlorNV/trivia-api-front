@@ -1,9 +1,12 @@
+@include button-theme("pink", $pink, 10px);
+@include button-theme("green", $green, 10px);
+@include button-theme("cyan", $cyan, 10px);
+
 a.link {
     border-radius: 6px;
     padding: 0.6rem 1rem;
     background-color: $pink;
     box-shadow: 0 0 10px $pink, 0 0 20px $pink;
-    color: $white;
     transition: box-shadow 0.5s cubic-bezier(0.4, 0, 0.6, 1);
 
     &:hover {
@@ -17,57 +20,74 @@ a.link {
     text-align: center;
     border-radius: 1rem;
     margin-top: 2rem;
-    font-size: 1.1rem;
-    font-weight: bold;
-    color: $white;
     cursor: pointer;
-    @include button-background;
 
-    &.green {
+    &.btn-play {
         font-size: 2rem;
         text-transform: uppercase;
-        @include button-background($green);
 
         .icon {
             font-size: 2.8rem;
         }
     }
 
-    &.pink {
-        @include button-background($pink);
-    }
-
     .icon {
         font-size: 1.4rem;
-        vertical-align: bottom;
-        margin-right: 10px;
     }
 }
 
-.form-btn {
-    margin-top: 2rem;
-    padding: 0.6rem 2rem;
-    border-radius: 6px;
-    border: none;
-    background-color: $cyan;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 4px;
-    color: $white;
-    box-shadow: 0 0 10px $cyan, 0 0 20px $cyan;
+.btn {
+    display: inline-block;
     cursor: pointer;
-    transition: box-shadow 1s cubic-bezier(0.4, 0, 0.6, 1);
-
-    &:hover {
-        box-shadow: 0 0 10px $cyan, 0 0 20px $cyan, 0 0 40px $cyan;
-    }
+    border: none;
+    text-align: center;
+    border-radius: 6px;
+    padding: 0.6rem 2rem;
 
     &.disabled {
         background-color: transparent;
         box-shadow: none;
-        border: 2px solid rgba($white, 0.8);
+        border: 2px solid rgba($white, 0.8) !important;
         color: rgba($white, 0.8);
-        cursor: auto;
+        cursor: default !important;
+    }
+}
+
+.btn-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0.6rem 0;
+    width: 180px;
+}
+
+.btn-outline {
+    border: 2px solid rgba($white, 0.8);
+    border-radius: 1rem;
+    padding: 1rem;
+    background-color: transparent;
+}
+
+.form-btn {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.answer {
+    display: block;
+    width: 28rem;
+
+    &:hover {
+        border-color: $cyan;
+    }
+
+    &.correct-answer {
+        @include border-shadow($green, 4px);
+        cursor: default;
+    }
+
+    &.incorrect-answer {
+        @include border-shadow($pink, 4px);
+        cursor: default;
     }
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { SettingsContext } from "../context/SettingsContext";
 import { FiAlertCircle } from "react-icons/fi";
+import Difficulty from "../components/Difficulty";
 
 const Settings = () => {
   const { settings, setSettings } = useContext(SettingsContext);
@@ -61,61 +62,39 @@ const Settings = () => {
       <div className="form-row">
         <h3 className="form-row__title">Difficulty</h3>
         <div className="form-row__labels">
-          <label
-            className={`form-label-radio ${
-              difficulty === "easy" && difficulty
-            }`}
+          <Difficulty
+            difficulty={difficulty}
+            value="easy"
+            handleChange={handleChange}
           >
-            <input
-              type="radio"
-              name="difficulty"
-              value="easy"
-              checked={difficulty === "easy"}
-              onChange={handleChange}
-              className="form-radio easy"
-            />
             Easy
-          </label>
-          <label
-            className={`form-label-radio ${
-              difficulty === "medium" && difficulty
-            }`}
+          </Difficulty>
+          <Difficulty
+            difficulty={difficulty}
+            value="medium"
+            handleChange={handleChange}
           >
-            <input
-              type="radio"
-              name="difficulty"
-              value="medium"
-              checked={difficulty === "medium"}
-              onChange={handleChange}
-              className="form-radio medium"
-            />
             Medium
-          </label>
-          <label
-            className={`form-label-radio ${
-              difficulty === "hard" && difficulty
-            }`}
+          </Difficulty>
+          <Difficulty
+            difficulty={difficulty}
+            value="hard"
+            handleChange={handleChange}
           >
-            <input
-              type="radio"
-              name="difficulty"
-              value="hard"
-              checked={difficulty === "hard"}
-              onChange={handleChange}
-              className="form-radio hard"
-            />
             Hard
-          </label>
+          </Difficulty>
         </div>
       </div>
-      <button className="form-btn" onClick={handleConfirm}>
+      <button className="btn btn-cyan form-btn mt-3" onClick={handleConfirm}>
         Confirm
       </button>
       {wasChanged && (
-        <span className="alert">
-          <FiAlertCircle className="icon" />
-          Save changes
-        </span>
+        <div className="alert">
+          <span className="icon-container">
+            <FiAlertCircle className="icon" />
+            Save changes
+          </span>
+        </div>
       )}
     </form>
   );

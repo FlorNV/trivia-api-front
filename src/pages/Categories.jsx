@@ -58,7 +58,9 @@ const Categories = () => {
       <div>
         <button
           onClick={getQuestionServer}
-          className={`form-btn ${!selected ? "disabled" : ""}`}
+          className={`btn btn-cyan form-btn mt-3 ${
+            !selected ? "disabled" : ""
+          }`}
           disabled={selected === ""}
         >
           Start

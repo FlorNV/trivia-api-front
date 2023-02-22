@@ -71,7 +71,7 @@ const QuestionItem = ({
 
       <div className="question">{question}</div>
       {answers.map((answer, index) => {
-        let styles = "answer";
+        let styles = "btn btn-outline answer mt-2";
         if (isSelectedAnswer) {
           if (answer === selected) {
             if (answer === correctAnswer) {

@@ -41,15 +41,7 @@
         margin-top: 0.5rem;
         color: $pink;
     }
-
-    .form-btn {
-        display: block;
-        margin: 4rem auto 0;
-    }
 }
-
-
-// settings
 
 .settings-form {
     width: 800px;
@@ -90,16 +82,6 @@
         border-radius: 1rem;
         margin-right: 2rem;
         transition: border-color 1s ease;
-
-        &.easy {
-            @include difficulty;
-        }
-        &.medium {
-            @include difficulty($color: $yellow);
-        }
-        &.hard {
-            @include difficulty($color: $pink);
-        }
     }
 
     .form-radio {
@@ -113,29 +95,16 @@
         border-radius: 50%;
         display: grid;
         place-content: center;
-        transition: border-color 1s ease;
-
-        &.easy:checked {
-            @include difficulty;
-        }
-        &.medium:checked {
-            @include difficulty($color: $yellow);
-        }
-        &.hard:checked {
-            @include difficulty($color: $pink);
-        }
+        transition: border-color 1s cubic-bezier(0.4, 0, 0.6, 1);
 
         &.easy::before {
-            @include difficulty-background;
-
+            @include radio-background;
         }
         &.medium::before {
-            @include difficulty-background($color: $yellow);
-
+            @include radio-background($color: $yellow);
         }
         &.hard::before {
-            @include difficulty-background($color: $pink);
-
+            @include radio-background($color: $pink);
         }
 
         &:checked::before {
@@ -179,4 +148,16 @@
     text-align: center;
     box-shadow: 0 0 4px $purple;
     color: $white;
+}
+
+.form-label-radio.easy, .easy:checked {
+    @include border-shadow($green, 4px);
+}
+
+.form-label-radio.medium, .medium:checked {
+    @include border-shadow($yellow, 4px);
+}
+
+.form-label-radio.hard, .hard:checked {
+    @include border-shadow($pink, 4px);
 }
