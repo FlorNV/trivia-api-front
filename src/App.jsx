@@ -18,8 +18,6 @@ const App = () => {
     const userStored = localStorage.getItem("currentUser");
     const settingsStored = localStorage.getItem("settings");
 
-    console.log(settings);
-    console.log(settingsStored);
     if (userStored) {
       setCurrentUser(JSON.parse(userStored));
     }
